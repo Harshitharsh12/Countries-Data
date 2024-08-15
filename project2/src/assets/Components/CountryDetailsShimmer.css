@@ -10,7 +10,6 @@
         display: flex;
         height: 100px;
         width: 450px;
-        /* background-color: red; */
         flex-wrap: wrap;
         justify-content: space-around;
         column-gap: 50px;
