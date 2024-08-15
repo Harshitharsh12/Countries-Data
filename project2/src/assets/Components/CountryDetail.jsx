@@ -1,11 +1,7 @@
 import { Link } from "react-router-dom";
-// import useWindowSize from "../Hooks/useWindowSize";
 const CountryDetail = ({ countryData }) => {
-  // const size=useWindowSize()
   return (
     <div>
-      {/* <h1 style={{textAlign:'center'}}>Window Size:</h1> */}
-      {/* <h1 style={{textAlign:'center'}}>Width:{size.width} X Height:{size.height}</h1> */}
       <main>
         <div className="country-details-container">
           <span className="back-button" onClick={() => history.back()}>
@@ -69,7 +65,6 @@ const CountryDetail = ({ countryData }) => {
                   ))}{" "}
                 </div>
               )}
-              {/* countryData.borders.map((border)=>border).join(' , ')}. </div> */}
             </div>
           </div>
         </div>
