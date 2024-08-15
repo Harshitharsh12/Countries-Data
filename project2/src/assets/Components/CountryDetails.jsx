@@ -1,19 +1,10 @@
 import { useEffect, useState } from "react"
 import './Country.css'
-// import Loading from "./Loading"
 import CountryDetail from "./CountryDetail"
 import { useLocation, useParams } from "react-router-dom"
 import CountryDetailsShimmer from "./CountryDetailsShimmer"
 const CountryDetails = () => {
-
-  // const location=useLocation()
-  // console.log(location.state)
-  // or
-  // const {state}=useLocation()
-  // console.log(state)
-  // const countryName = new URLSearchParams(location.search).get('name')
   const params=useParams()
-  // console.log(params)
   const countryName=params.country
     const [countryData,setCountryData]=useState(null)
     const [notFound,setNotFound]=useState(false)
@@ -31,7 +22,7 @@ const CountryDetails = () => {
           languages:Object.values(data[0].languages).join(','),
           flag:data[0].flags.svg,
           borders:[]
-          // borders:data.borders
+    
       })
       if(!data[0].borders){
         data[0].borders=[]
@@ -40,7 +31,6 @@ const CountryDetails = () => {
 fetch(`https://restcountries.com/v3.1/alpha/${border}`)
 .then((res)=>res.json())
 .then((borderCountry)=>{
-// console.log(borderCountry[0])
 setCountryData((prevState)=>({...prevState,borders:[...prevState.borders,borderCountry[0].name.common]}))  
 
 })
@@ -50,7 +40,6 @@ setCountryData((prevState)=>({...prevState,borders:[...prevState.borders,borderC
       fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`)
       .then((res)=>res.json())
       .then((data)=>{
-        // console.log(data)
        updateCountryData(data)
       }).catch(error=>{
 setNotFound(true)
@@ -64,7 +53,7 @@ setNotFound(true)
     countryData===null?<CountryDetailsShimmer/>: <CountryDetail countryData={countryData}/>
   
   )
-    // <CountryDetailsShimmer/>)
+
 }
 
 export default CountryDetails
