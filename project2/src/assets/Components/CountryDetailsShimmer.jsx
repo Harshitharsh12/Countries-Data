@@ -7,16 +7,6 @@ const CountryDetailsShimmer = () => {
  <div>
   <div className='name'></div>
   <div className='shimmer-details-1'>
-  {/* <div className='details1'></div>
-    <div className='details1'></div>
-    <div className='details1'></div>
-    <div className='details1'></div>
-    <div className='details1'></div>
-    <div className='details1'></div>
-    <div className='details1'></div>
-    <div className='details1'></div>
-    <div className='details1'></div> */}
-    {/* or */}
     {Array.from({length:11}).map((el,i)=>{
     return <div className="details1" key={i}></div>
   })    }
