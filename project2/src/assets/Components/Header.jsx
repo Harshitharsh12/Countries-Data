@@ -1,7 +1,6 @@
 import { useContext, useState } from "react";
 import { isDarkM } from "../contexts/ThemeContext";
 const Header = () => {
-  // const[isDark,setIsDark]=useState(JSON.parse(localStorage.getItem('isDarkMode')))
   const isDark = useContext(isDarkM);
   return (
     <>
@@ -15,8 +14,7 @@ const Header = () => {
             onClick={() => {
               document.getElementsByTagName("body")[0].classList.toggle("dark");
               isDark.isDarkMode();
-              // setIsDark(!isDark)
-              // localStorage.setItem('isDarkMode',!isDark)
+             
             }}
           >
             <i
